@@ -1,0 +1,28 @@
+class Solution {
+    public int minimumTotal(List<List<Integer>> triangle) {
+
+        int n = triangle.size();
+        int[][] a = new int[n][n];
+
+        // Convert List to array
+        int r = 0;
+        for (List<Integer> row : triangle) {
+            int c = 0;
+            for (int x : row) {
+                a[r][c] = x;
+                c++;
+            }
+            r++;
+        }
+
+        // Bottom to top
+        for (int i = n - 2; i >= 0; i--) {
+            for (int j = 0; j <= i; j++) {
+
+                a[i][j] = a[i][j] + Math.min(a[i + 1][j],a[i + 1][j + 1]);
+            }
+        }
+
+        return a[0][0];
+    }
+}
