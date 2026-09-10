@@ -4,7 +4,7 @@ class Solution {
         int n = triangle.size();
         int[][] a = new int[n][n];
 
-        // Convert List to array
+        
         int r = 0;
         for (List<Integer> row : triangle) {
             int c = 0;
