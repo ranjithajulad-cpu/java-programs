@@ -1,15 +1,14 @@
 class Solution {
     public int divide(int dividend, int divisor) {
 
-        // Special case
+      
         if (dividend == Integer.MIN_VALUE && divisor == -1) {
             return Integer.MAX_VALUE;
         }
 
-        // Find the sign of answer
+    
         boolean negative = (dividend < 0) ^ (divisor < 0);
 
-        // Convert to positive using long
         long n = dividend;
         long d = divisor;
 
@@ -21,13 +20,12 @@ class Solution {
 
         long result = 0;
 
-        // Repeated subtraction using loops
+        
         while (n >= d) {
 
             long temp = d;
             long multiple = 1;
 
-            // Keep doubling the divisor
             while (n >= temp + temp) {
                 temp = temp + temp;
                 multiple = multiple + multiple;
