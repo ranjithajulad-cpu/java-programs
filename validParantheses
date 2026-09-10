@@ -8,13 +8,13 @@ class Solution {
 
             char ch = s.charAt(i);
 
-            // Opening brackets
+           
             if (ch == '(' || ch == '[' || ch == '{') {
                 top++;
                 stack[top] = ch;
             }
 
-            // Closing brackets
+           
             else {
                 if (top == -1)
                     return false;
@@ -33,7 +33,7 @@ class Solution {
             }
         }
 
-        // Stack should be empty
+ 
         if (top == -1)
             return true;
         else
